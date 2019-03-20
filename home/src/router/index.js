@@ -11,7 +11,7 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      redirect: '/main'
+      redirect: '/weexbasic'
     },
     {
       path: '/main',
