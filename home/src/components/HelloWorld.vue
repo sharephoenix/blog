@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img src="../assets/logo.png">
     <VueMarkDown>{{msg}}</VueMarkDown>
   </div>
 </template>
