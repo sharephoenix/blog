@@ -9,19 +9,18 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'WeexBasic',
+      component: WeexBasic
+    },
+    {
+      path: '/weexbasic',
       name: 'HelloWorld',
-      component: HelloWorld,
-      redirect: '/weexbasic'
+      component: HelloWorld
     },
     {
       path: '/main',
       name: 'Main',
       component: Main
-    },
-    {
-      path: '/weexbasic',
-      name: 'WeexBasic',
-      component: WeexBasic
     }
   ]
 })
