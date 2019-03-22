@@ -15,7 +15,7 @@
     <el-menu-item-group>
       <span slot="title">分组一</span>
       <el-menu-item index="1-1">FlexBox 布局</el-menu-item>
-      <el-menu-item index="1-2">Default</el-menu-item>
+      <el-menu-item index="1-2">选项2</el-menu-item>
     </el-menu-item-group>
   </el-submenu>
   <el-menu-item index="2" disabled>
@@ -36,7 +36,6 @@
 </el-menu>
 <div class="content">
   <FlexBox v-if="showIndex === '1-1'" />
-  <Default v-if="showIndex !== '1-1'"/>
 </div>
 </div>
 </div>
@@ -44,7 +43,6 @@
 
 <script>
 import FlexBox from '@/components/views/FlexBox'
-import Default from '@/components/views/Default'
 
 export default {
   data () {
@@ -59,17 +57,17 @@ export default {
     },
     select (params) {
       this.showIndex = params
+      alert(JSON.stringify(params))
     },
     handleOpen (key, keyPath) {
-      console.log(key, keyPath)
+      alert(key, keyPath)
     },
     handleClose (key, keyPath) {
-      console.log(key, keyPath)
+      alert(key, keyPath)
     }
   },
   components: {
-    FlexBox,
-    Default
+    FlexBox
   }
 }
 </script>
@@ -101,7 +99,6 @@ $background: #FFcccc;
   }
   .left-float {
     height: 100%;
-    background-color:lightgray;
   }
   .content {
     display: inline-block;

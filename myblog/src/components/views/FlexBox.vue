@@ -1,5 +1,5 @@
 <template>
-  <div class="body" @click="alertg">
+  <div class="body">
     <div class="item-cls">aaa</div>
     <div class="item-cls">bbb</div>
     <div class="item-cls">ccc</div>
@@ -20,9 +20,6 @@ export default {
     return {}
   },
   methods: {
-    alertg () {
-      alert('ddddd')
-    }
   }
 }
 </script>

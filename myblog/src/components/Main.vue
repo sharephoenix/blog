@@ -5,12 +5,12 @@
     <el-tab-pane label="javascript">
       <JavaScript></JavaScript>
     </el-tab-pane>
-    <el-tab-pane label="Swift">角色管理d</el-tab-pane>
-    <el-tab-pane label="Objective-C">定时任务补偿</el-tab-pane>
-    <el-tab-pane label="Kotlin">定时任务补偿</el-tab-pane>
-    <el-tab-pane label="Java">定时任务补偿</el-tab-pane>
-    <el-tab-pane label="Golang">定时任务补偿</el-tab-pane>
-    <el-tab-pane label="Weex">定时任务补偿</el-tab-pane>
+    <el-tab-pane label="Swift">Swift</el-tab-pane>
+    <el-tab-pane label="Objective-C">Objective-C</el-tab-pane>
+    <el-tab-pane label="Kotlin">Kotlin</el-tab-pane>
+    <el-tab-pane label="Java">Java</el-tab-pane>
+    <el-tab-pane label="Golang">Golang</el-tab-pane>
+    <el-tab-pane label="Weex">Weex</el-tab-pane>
     </el-tabs>
   </div>
 </template>
