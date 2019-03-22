@@ -4,15 +4,22 @@
     <el-tabs type="border-card">
       <el-tab-pane @click="testfuncion" label="基础组件">
         <weex-basic></weex-basic>
-        </el-tab-pane>
-      <el-tab-pane label="Native组件">native组件</el-tab-pane>
+      </el-tab-pane>
+      <el-tab-pane @click="testfuncion" label="播放器">
+        <audio-native></audio-native>
+      </el-tab-pane>
+      <el-tab-pane @click="testfuncion" label="网络请求">
+        <net-native></net-native>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
 
-import WeexBasic from '@/components/WeexBasic'
+import WeexBasic from '@/components/views/WeexBasic'
+import AudioNative from '@/components/views/AudioNative'
+import NetNative from '@/components/views/NetNative'
 
 export default {
   data () {
@@ -28,6 +35,12 @@ export default {
   components: {
     'weex-basic': {
       render: h => h(WeexBasic)
+    },
+    'audio-native': {
+      render: h => h(AudioNative)
+    },
+    'net-native': {
+      render: h => h(NetNative)
     }
   }
 }

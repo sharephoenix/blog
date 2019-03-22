@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Main from '@/components/Main'
-import WeexBasic from '@/components/WeexBasic'
+import WeexBasic from '@/components/views/WeexBasic'
 Vue.use(Router)
 
 export default new Router({
@@ -16,11 +15,6 @@ export default new Router({
       path: '/weexbasic',
       name: 'WeexBasic',
       component: WeexBasic
-    },
-    {
-      path: '/helloworld',
-      name: 'HelloWorld',
-      component: HelloWorld
     }
   ]
 })
