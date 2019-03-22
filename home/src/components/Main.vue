@@ -1,69 +1,42 @@
 <template>
-  <div>
-    <el-container>
-  <el-header>Header</el-header>
-  <el-main>Main</el-main>
-</el-container>
-
-<el-container>
-  <el-header>Header</el-header>
-  <el-main>Main</el-main>
-  <el-footer>Footer</el-footer>
-</el-container>
-
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-main>Main</el-main>
-</el-container>
-
-<el-container>
-  <el-header>Header</el-header>
-  <el-container>
-    <el-aside width="200px">Aside</el-aside>
-    <el-main>Main</el-main>
-  </el-container>
-</el-container>
-<el-container>
-  <el-header>Header</el-header>
-  <el-container>
-    <el-aside width="200px">Aside</el-aside>
-    <el-container>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
-  </el-container>
-</el-container>
-
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>Main</el-main>
-  </el-container>
-</el-container>
-
-<el-container>
-  <el-aside width="200px">Aside</el-aside>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>Main</el-main>
-    <el-footer>Footer</el-footer>
-  </el-container>
-</el-container>
+  <div class="body">
+    <div>Weex 组件 测试</div>
+    <el-tabs type="border-card">
+      <el-tab-pane @click="testfuncion" label="基础组件">
+        <weex-basic></weex-basic>
+        </el-tab-pane>
+      <el-tab-pane label="Native组件">native组件</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
+
+import WeexBasic from '@/components/WeexBasic'
+
 export default {
   data () {
     return {
       name: 'this is my name'
+    }
+  },
+  methods: {
+    testfuncion () {
+      console.log('test')
+    }
+  },
+  components: {
+    'weex-basic': {
+      render: h => h(WeexBasic)
     }
   }
 }
 </script>
 
 <style scoped>
+ .body {
+   background-color: #f2f2f2;
+ }
  .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;

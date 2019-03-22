@@ -9,18 +9,18 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Main',
+      component: Main
+    },
+    {
+      path: '/weexbasic',
       name: 'WeexBasic',
       component: WeexBasic
     },
     {
-      path: '/weexbasic',
+      path: '/helloworld',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-    {
-      path: '/main',
-      name: 'Main',
-      component: Main
     }
   ]
 })

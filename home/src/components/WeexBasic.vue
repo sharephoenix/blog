@@ -51,6 +51,7 @@ export default {
       console.log('testfunciontestfunciontestfuncion')
     },
     handleSelect (key, keyPath) {
+      alert('sss')
       this.selectedIndex = key
       this.selectedKeyPath = keyPath
       // alert(window.WebViewJavascriptBridge)
@@ -64,7 +65,7 @@ export default {
               name: 'this is my webname'}
           },
           (dataFromOC) => {
-            this.log = '方法回调成功'
+            this.log = '方法回调成功' + JSON.stringify(dataFromOC)
           })
       }
       if (key === '2') {
