@@ -2,13 +2,13 @@
   <div class="body">
     <div>{{log}}</div>
     <div class="content">
-      <div class="content-div">
+      <div @click="get" class="content-div">
         get
       </div>
-      <div class="content-div">
+      <div @click="post" class="content-div">
         post
       </div>
-      <div class="content-div">
+      <div @click="deleteAction" class="content-div">
         delete
       </div>
     </div>
@@ -20,6 +20,22 @@ export default {
   data () {
     return {
       log: 'AudioNatives'
+    }
+  },
+  methods: {
+    get () {
+
+    },
+    post () {
+
+    },
+    deleteAction () {
+
+    },
+    customAction ({module, event, params}) {
+      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110', module: module, event: event, params: params}, (dataFromOC) => {
+        this.log = 'log:' + JSON.stringify(dataFromOC)
+      })
     }
   }
 }
