@@ -36,7 +36,7 @@ export default {
         event: 'requestData',
         params: {
           method: 'get', 
-          url: 'http://jsonplaceholder.typicode.com/users', 
+          url: this.puturl, 
           params: this.xxxparams
         }
       }, (dataFromOC) => {
@@ -50,7 +50,7 @@ export default {
         event: 'requestData',
         params: {
           method: 'post', 
-          url: 'http://jsonplaceholder.typicode.com/users', 
+          url: this.puturl, 
           params: this.xxxparams
         }
       }, (dataFromOC) => {
@@ -64,7 +64,7 @@ export default {
         event: 'requestData',
         params: {
           method: 'delete', 
-          url: 'http://jsonplaceholder.typicode.com/users', 
+          url: this.puturl, 
           params: this.xxxparams
         }
       }, (dataFromOC) => {
@@ -79,16 +79,21 @@ export default {
         params: {
           method: 'put', 
           url: this.puturl, 
-          params: null
+          params: JSON.stringify({})
         }
       }, (dataFromOC) => {
         this.log = '方法回调成功' + JSON.stringify(dataFromOC)
       })
     },
     customAction ({module, event, params}) {
-      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110', module: module, event: event, params: params}, (dataFromOC) => {
+      this.reistCallBack = (dataFromOC) => {
         this.log = 'log:' + JSON.stringify(dataFromOC)
-      })
+      }
+      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110', 
+      module: module, 
+      event: event, 
+      params: params}, 
+      this.reistCallBack)
     }
   }
 }
