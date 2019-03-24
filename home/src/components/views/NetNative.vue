@@ -1,6 +1,8 @@
 <template>
   <div class="body">
     <div class="log-cls">{{log}}</div>
+    <el-input v-model="puturl" placeholder="输入url"></el-input>
+    <el-input v-model="xxxparams" placeholder="输入 json 参数"></el-input>
     <div class="content">
       <div @click="get" class="content-div">
         get
