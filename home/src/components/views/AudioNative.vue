@@ -95,6 +95,7 @@ export default {
 }
 .content-div {
   display: inline-block;
+  width: 70px;
   height: 44px;
   background-color: #f2f2f2;
   color: #000;
