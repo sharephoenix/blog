@@ -77,6 +77,8 @@ export default {
   margin-bottom: 10px;
   line-height: 44px;
   border-radius: 3px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .content-div:active {
   background-color: aqua;
