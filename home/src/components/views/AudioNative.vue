@@ -75,9 +75,9 @@ export default {
     window.setupWebViewJavascriptBridge((bridge) => {
       bridge.registerHandler('XHBAudioPlayerModule', (data, responseCallback) => {
         const {module, event, params, reqId} = data
-       if (event === 'registerStateSignal') {
-         this.log = params
-       }
+        if (event === 'registerStateSignal') {
+          this.log = params
+        }
         responseCallback(responseData)
       })
     })

@@ -29,70 +29,69 @@ export default {
   },
   methods: {
     get () {
-      const xxx = JSON.stringify({})
-       window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
-       {reqId: '110',
-        module: 'XHBNetworkModule',
-        event: 'requestData',
-        params: {
-          method: 'get', 
-          url: this.puturl, 
-          params: this.xxxparams
-        }
-      }, (dataFromOC) => {
-        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
-      })
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
+        {reqId: '110',
+          module: 'XHBNetworkModule',
+          event: 'requestData',
+          params: {
+            method: 'get',
+            url: this.puturl,
+            params: this.xxxparams
+          }
+        }, (dataFromOC) => {
+          this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+        })
     },
     post () {
-      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
-       {reqId: '110',
-        module: 'XHBNetworkModule',
-        event: 'requestData',
-        params: {
-          method: 'post', 
-          url: this.puturl, 
-          params: this.xxxparams
-        }
-      }, (dataFromOC) => {
-        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
-      })
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
+        {reqId: '110',
+          module: 'XHBNetworkModule',
+          event: 'requestData',
+          params: {
+            method: 'post',
+            url: this.puturl,
+            params: this.xxxparams
+          }
+        }, (dataFromOC) => {
+          this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+        })
     },
     deleteAction () {
-      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
-       {reqId: '110',
-        module: 'XHBNetworkModule',
-        event: 'requestData',
-        params: {
-          method: 'delete', 
-          url: this.puturl, 
-          params: this.xxxparams
-        }
-      }, (dataFromOC) => {
-        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
-      })
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
+        {reqId: '110',
+          module: 'XHBNetworkModule',
+          event: 'requestData',
+          params: {
+            method: 'delete',
+            url: this.puturl,
+            params: this.xxxparams
+          }
+        }, (dataFromOC) => {
+          this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+        })
     },
     putAction () {
-      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
-       {reqId: '110',
-        module: 'XHBNetworkModule',
-        event: 'requestData',
-        params: {
-          method: 'put', 
-          url: this.puturl, 
-          params: JSON.stringify({})
-        }
-      }, (dataFromOC) => {
-        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
-      })
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
+        {reqId: '110',
+          module: 'XHBNetworkModule',
+          event: 'requestData',
+          params: {
+            method: 'put',
+            url: this.puturl,
+            params: JSON.stringify({})
+          }
+        }, (dataFromOC) => {
+          this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+        })
     },
     customAction ({module, event, params}) {
       this.reistCallBack = (dataFromOC) => {
         this.log = 'log:' + JSON.stringify(dataFromOC)
       }
-      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110', 
-      module: module, 
-      event: event, 
-      params: params}, 
+      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110',
+        module: module,
+        event: event,
+        params: params},
       this.reistCallBack)
     }
   }
