@@ -95,13 +95,13 @@ export default {
 }
 .content-div {
   display: inline-block;
-  width: 70px;
+  width: 90px;
   height: 44px;
   background-color: #f2f2f2;
   color: #000;
   border: 1px solid gray;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   margin-bottom: 10px;
   line-height: 44px;
   border-radius: 3px;
