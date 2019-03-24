@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    <div>{{log}}</div>
+    <div class="log-cls">{{log}}</div>
     <div class="content">
       <div @click="get" class="content-div">
         get
@@ -24,7 +24,7 @@ export default {
     return {
       log: 'NetworkNatives',
       xxxparams: JSON.stringify({}),
-      puturl: 'https://test.xiaoheiban.cn/user/explain'
+      puturl: 'growth/activityTemplate/v1/guery'
     }
   },
   methods: {
@@ -43,6 +43,11 @@ export default {
         })
     },
     post () {
+      this.log = JSON.stringify({params: {
+            method: 'post',
+            url: this.puturl,
+            params: this.xxxparams
+          }})
       window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
         {reqId: '110',
           module: 'XHBNetworkModule',
@@ -50,7 +55,6 @@ export default {
           params: {
             method: 'post',
             url: this.puturl,
-            params: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -121,5 +125,11 @@ export default {
 
 .content-div:active {
   background-color: aqua;
+}
+.log-cls {
+  width: 80%;
+  background-color: beige;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 </style>

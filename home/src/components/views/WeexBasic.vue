@@ -28,7 +28,7 @@ export default {
   methods: {
     getStorage () {
       window.WebViewJavascriptBridge.callHandler('storage', {reqId: '110', module: 'storage', event: 'getItem', params: 'name'}, (dataFromOC) => {
-        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+        this.log = '方法回调成功-get' + JSON.stringify(dataFromOC)
       })
     },
     setStorage () {
@@ -41,7 +41,7 @@ export default {
             name: 'this is my webname'}
         },
         (dataFromOC) => {
-          this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+          this.log = '方法回调成功-set' + JSON.stringify(dataFromOC)
         })
     }
   },
