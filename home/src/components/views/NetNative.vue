@@ -11,6 +11,9 @@
       <div @click="deleteAction" class="content-div">
         delete
       </div>
+      <div @click="putAction" class="content-div">
+        put
+      </div>
     </div>
   </div>
 </template>
@@ -19,18 +22,68 @@
 export default {
   data () {
     return {
-      log: 'AudioNatives'
+      log: 'NetworkNatives',
+      xxxparams: JSON.stringify({}),
+      puturl: 'https://test.xiaoheiban.cn/user/explain'
     }
   },
   methods: {
     get () {
-
+      const xxx = JSON.stringify({})
+       window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
+       {reqId: '110',
+        module: 'XHBNetworkModule',
+        event: 'requestData',
+        params: {
+          method: 'get', 
+          url: 'http://jsonplaceholder.typicode.com/users', 
+          params: this.xxxparams
+        }
+      }, (dataFromOC) => {
+        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+      })
     },
     post () {
-
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
+       {reqId: '110',
+        module: 'XHBNetworkModule',
+        event: 'requestData',
+        params: {
+          method: 'post', 
+          url: 'http://jsonplaceholder.typicode.com/users', 
+          params: this.xxxparams
+        }
+      }, (dataFromOC) => {
+        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+      })
     },
     deleteAction () {
-
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
+       {reqId: '110',
+        module: 'XHBNetworkModule',
+        event: 'requestData',
+        params: {
+          method: 'delete', 
+          url: 'http://jsonplaceholder.typicode.com/users', 
+          params: this.xxxparams
+        }
+      }, (dataFromOC) => {
+        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+      })
+    },
+    putAction () {
+      window.WebViewJavascriptBridge.callHandler('XHBNetworkModule', 
+       {reqId: '110',
+        module: 'XHBNetworkModule',
+        event: 'requestData',
+        params: {
+          method: 'put', 
+          url: this.puturl, 
+          params: null
+        }
+      }, (dataFromOC) => {
+        this.log = '方法回调成功' + JSON.stringify(dataFromOC)
+      })
     },
     customAction ({module, event, params}) {
       window.WebViewJavascriptBridge.callHandler(module, {reqId: '110', module: module, event: event, params: params}, (dataFromOC) => {
