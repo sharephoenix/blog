@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       log: 'NetworkNatives',
-      xxxparams: JSON.stringify({}),
+      xxxparams: JSON.stringify({name: 'alexluan'}),
       puturl: 'growth/activityTemplate/v1/guery'
     }
   },
@@ -45,11 +45,6 @@ export default {
         })
     },
     post () {
-      this.log = JSON.stringify({params: {
-            method: 'post',
-            url: this.puturl,
-            params: this.xxxparams
-          }})
       window.WebViewJavascriptBridge.callHandler('XHBNetworkModule',
         {reqId: '110',
           module: 'XHBNetworkModule',
@@ -57,6 +52,7 @@ export default {
           params: {
             method: 'post',
             url: this.puturl,
+            params: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -84,7 +80,7 @@ export default {
           params: {
             method: 'put',
             url: this.puturl,
-            params: JSON.stringify({})
+            params: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -114,6 +110,7 @@ export default {
 }
 .content-div {
   display: inline-block;
+  width: 70px;
   height: 44px;
   background-color: #f2f2f2;
   color: #000;
@@ -129,7 +126,7 @@ export default {
   background-color: aqua;
 }
 .log-cls {
-  width: 80%;
+  width: 100%;
   background-color: beige;
   word-break: break-all;
   word-wrap: break-word;
