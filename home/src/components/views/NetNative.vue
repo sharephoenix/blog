@@ -25,8 +25,11 @@ export default {
   data () {
     return {
       log: 'NetworkNatives',
-      xxxparams: {name: 'alexluan'},
-      puturl: 'growth/activityTemplate/v1/guery'
+      xxxparams: {
+        columnId: '5c934dd7725c2c1b70db4f15',
+        page: 1
+      },
+      puturl: '/api/knowing/5b5973d6f284de7fd137ffc5'
     }
   },
   methods: {
