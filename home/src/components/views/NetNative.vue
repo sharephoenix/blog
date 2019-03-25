@@ -38,7 +38,7 @@ export default {
           params: {
             method: 'get',
             url: this.puturl,
-            params: this.xxxparams
+            reqParams: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -52,7 +52,7 @@ export default {
           params: {
             method: 'post',
             url: this.puturl,
-            params: this.xxxparams
+            reqParams: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -66,7 +66,7 @@ export default {
           params: {
             method: 'delete',
             url: this.puturl,
-            params: this.xxxparams
+            reqParams: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
@@ -80,21 +80,11 @@ export default {
           params: {
             method: 'put',
             url: this.puturl,
-            params: this.xxxparams
+            reqParams: this.xxxparams
           }
         }, (dataFromOC) => {
           this.log = '方法回调成功' + JSON.stringify(dataFromOC)
         })
-    },
-    customAction ({module, event, params}) {
-      this.reistCallBack = (dataFromOC) => {
-        this.log = 'log:' + JSON.stringify(dataFromOC)
-      }
-      window.WebViewJavascriptBridge.callHandler(module, {reqId: '110',
-        module: module,
-        event: event,
-        params: params},
-      this.reistCallBack)
     }
   }
 }
