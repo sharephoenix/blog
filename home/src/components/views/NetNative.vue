@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       log: 'NetworkNatives',
-      xxxparams: {name: 'alexluan'},
+      xxxparams: JSON.stringify({name: 'alexluan'}),
       puturl: 'growth/activityTemplate/v1/guery'
     }
   },
